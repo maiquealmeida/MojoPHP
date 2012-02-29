@@ -1,0 +1,22 @@
+<?php
+
+if ( ! defined('BASE_PATH')) exit('Acesso negado!');
+
+/**
+ * Esta é classe base para os controllers da aplicação, ela herda a classe
+ * MJ_Object que traz as opções de de registro de objetos e recuperação
+ * das instâncias dos mesmos.
+ * 
+ * @package Mojo*PHP
+ * @author Eliel de Paula <elieldepaula@gmail.com
+ * @since 26/02/2012
+ * 
+ */
+
+class MJ_Controller extends MJ_Object {
+    
+    function __construct(){
+        parent::__construct();
+    }
+    
+}

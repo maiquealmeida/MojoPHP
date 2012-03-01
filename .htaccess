@@ -1,0 +1,21 @@
+SetEnv ENVIRONMENT development
+
+<Files ~ "^.(htaccess|htpasswd)$">
+        deny from all
+</Files>
+
+<IfModule mod_rewrite.c>
+#Options +FollowSymLinks
+RewriteEngine On
+
+##Forca o uso do www na url
+#RewriteCond %{HTTP_HOST} ^dominio.com.br [NC]
+#RewriteRule ^(.*)$ http://www.dominio.com.br/$1 [L,R=301]
+
+### Inclui exececao de verificacao do www para subdominios
+#RewriteCond %{HTTP_HOST} !^subdominio.dominio.com.br [NC]
+
+RewriteBase /
+RewriteCond %{REQUEST_URI} !^(/index\.php|/template|/assets|/admin|/data|/tmp|/robots\.txt|/favicon\.ico)
+RewriteRule ^(.*)$ /index.php/$1 [L]
+</IfModule>

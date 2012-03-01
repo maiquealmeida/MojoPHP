@@ -16,8 +16,15 @@ class MJ_Datasource extends MJ_Object {
     
     function __construct() {
         parent::__construct();
+       
+        
+        if(!defined(ENVIRONMENT)) {
+            throw new Exception('ENVIRONMENT is not set. See your .htaccess file.');
+            
+        }
+        
         $config = Config::read('database');
-        $driver = $config[ENVIROMENT]['driver'];
+        $driver = $config[ENVIRONMENT]['driver'];
         $this->load->driver($driver, NULL, $config);
         $this->db = $this->$driver->getInstance(Config::read('database'));
         

@@ -1,12 +1,11 @@
 <?php
-
 /**
  * Ambiente da instalação.
  */
-define('ENVIROMENT', 'desenvolvimento');
+define('ENVIRONMENT', 'desenvolvimento');
 
-if (defined('ENVIROMENT')) {
-    switch (ENVIROMENT) {
+if (defined('ENVIRONMENT')) {
+    switch (ENVIRONMENT) {
         case 'desenvolvimento':
             error_reporting(E_ALL);
             break;
@@ -28,7 +27,7 @@ define('DS', DIRECTORY_SEPARATOR);
 /**
  * Diretório de instalação.
  */
-define('DIR_INSTALACAO', 'MojoPHP');
+define('DIR_INSTALACAO', 'sys');
 /**
  * Caminho físico completo da instalação.
  */
